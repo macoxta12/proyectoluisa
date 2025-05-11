@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cita Agendada</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosluisa.css') }}">
+</head>
+<body>
+    <header id="cabecera">
+        <h1>¡Cita Confirmada!</h1>
+    </header>
+
+    <div class="bienvenida">
+        <h2>Gracias, {{ datos.nombre }}.</h2>
+        <p>Tu cita para <strong>{{ datos.servicio }}</strong> fue agendada con éxito.</p>
+        <ul>
+            <li><strong>Teléfono:</strong> {{ datos.telefono }}</li>
+            <li><strong>Correo:</strong> {{ datos.correo }}</li>
+            <li><strong>Fecha:</strong> {{ datos.fecha }}</li>
+            <li><strong>Horario:</strong> {{ datos.horario }}</li>
+            <li><strong>Primera vez:</strong> {{ datos.primera_vez }}</li>
+            <li><strong>Comentarios:</strong> {{ datos.comentarios }}</li>
+        </ul>
+        <a href="/" class="btn-detalle">Volver al Inicio</a>
+    </div>
+</body>
+</html>

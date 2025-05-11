@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosluisa.css') }}" type="text/css">
+</head>
+<body>
+    <!-- Cabecera con logo y nombre -->
+    <header id="cabecera">
+        <img class="logo" src="{{ url_for('static', filename='imagenes/logonegro.jpg') }}">
+        <h1>Luisa Pérez</h1>
+        <h4>Cosmetóloga</h4>
+    </header>
+
+    <!-- Menú de navegación -->
+    <div id="menu">
+        <a href="/" class="nav-enlace">Inicio</a>
+        <a href="/servicios" class="nav-enlace">Servicios</a>
+        <a href="/paquetes" class="nav-enlace">Paquetes</a>
+        <a href="/agenda" class="nav-enlace">Agenda</a>
+    </div>
+
+    <!-- Sección principal de servicios -->
+    <div class="contenedor-servicios">
+        <h2 class="titulo-principal">Nuestros Servicios</h2>
+
+        <!-- Servicio 1 -->
+        <div class="articulo-servicio">
+            <!-- Columna izquierda: texto -->
+            <div class="contenido-servicio">
+                <h3>Valoración Cosmetológica</h3>
+                <p>La valoración cosmetológica es el primer paso esencial para cuidar adecuadamente tu piel y tu imagen. Se trata de una evaluación
+                   personalizada en la que se analiza el estado actual de tu piel, rostro o cuero cabelludo, identificando necesidades específicas como
+                   deshidratación, acné, manchas, signos de envejecimiento, entre otros.
+                    <br>
+                    Durante esta sesión, también se tiene en cuenta tu historial de cuidado personal, tipo de piel, estilo de vida y objetivos estéticos.
+                    A partir de esta información, se diseñan recomendaciones a medida que pueden incluir rutinas de cuidado, productos cosméticos y
+                    tratamientos estéticos no invasivos adaptados a ti.
+                    <br>
+                    Este servicio es ideal si quieres comenzar un tratamiento facial, corporal o capilar con seguridad, confianza y resultados
+                    efectivos.</p>
+            </div>
+            <!-- Columna derecha: imagen -->
+            <img src="{{ url_for('static', filename='imagenes/valoracion.jpg') }}" alt="Valoración Cosmetológica">
+        </div>
+
+        <!-- Servicio 2 -->
+        <div class="articulo-servicio">
+            <!-- Columna izquierda: texto -->
+            <div class="contenido-servicio">
+                <h3>Limpieza Facial Profunda</h3>
+                <p>La higiene facial o limpieza facial profunda es un tratamiento esencial para mantener la piel sana, limpia y luminosa.
+                    Elimina impurezas, células muertas, puntos negros y exceso de grasa, ayudando a prevenir brotes y mejorar la textura del
+                    rostro.
+                    <br>
+                    Ideal para todo tipo de piel, este procedimiento revitaliza, oxigena y deja la piel más receptiva a tratamientos cosméticos
+                    posteriores.</p>
+            </div>
+            <!-- Columna derecha: imagen -->
+            <img src="{{ url_for('static', filename='imagenes/limpieza.jpg') }}" alt="Limpieza Facial Profunda">
+        </div>
+
+        <!-- Servicio 3 -->
+        <div class="articulo-servicio">
+            <!-- Columna izquierda: texto -->
+            <div class="contenido-servicio">
+                <h3>Electrocauterización</h3>
+                <p>Procedimiento estético no quirúrgico, rápido y seguro, utilizado para eliminar lesiones cutáneas como verrugas, lunares
+                    benignos y acrocordones.
+                    <br>
+                    Este tratamiento se realiza con un equipo especializado que utiliza una pequeña descarga de corriente controlada para
+                    cauterizar y eliminar la lesión sin necesidad de cortes. Es una técnica eficaz, con mínimas molestias y un tiempo de
+                    recuperación muy corto.
+                    <br>
+                    Antes del procedimiento se realiza una valoración profesional para asegurar que la lesión es apta para su remoción por
+                    métodos estéticos y que no presenta características sospechosas que requieran revisión médica.</p>
+            </div>
+            <!-- Columna derecha: imagen -->
+            <img src="{{ url_for('static', filename='imagenes/electrocauterizacion.jpg') }}" alt="Electrocauterización">
+        </div>
+
+        <!-- Servicio 4 -->
+        <div class="articulo-servicio">
+            <!-- Columna izquierda: texto -->
+            <div class="contenido-servicio">
+                <h3>Vitaminas con Dermapen</h3>
+                <p>El Dermapen es un tratamiento mínimamente invasivo que estimula la producción de colágeno y elastina de forma natural.
+                    Esto ayuda a reducir las arrugas, cicatrices, manchas, estrías y otras imperfecciones.</p>
+            </div>
+            <!-- Columna derecha: imagen -->
+            <img src="{{ url_for('static', filename='imagenes/dermapen.jpg') }}" alt="Vitaminas con Dermapen">
+        </div>
+
+        <!-- Servicio 5 -->
+        <div class="articulo-servicio">
+            <!-- Columna izquierda: texto -->
+            <div class="contenido-servicio">
+                <h3>Pink Glow</h3>
+                <p>Pink Glow es un cóctel avanzado de vitaminas y potentes antioxidantes indicado para aclarar las zonas hiperpigmentadas de la
+                    piel y prevenir la formación de nuevas imperfecciones en el rostro y cuerpo. Pink Glow es una combinación de 55 ingredientes
+                    ricos en compuestos bioactivos que favorecen la biología interna para la expresión de enzimas antioxidantes, también ayudan a
+                    disminuir procesos inflamatorios y oxidativos.
+                    <br>
+                    ✓Aclara las áreas hiperpigmentadas de la piel, mejora su firmeza y elasticidad
+                    <br>
+                    ✓ Promueve la luminosidad de la piel
+                    <br>
+                    ✓ Controla la formación de manchas
+                    <br>
+                    ✓ Nutre e hidrata la piel
+                    <br>
+                    ✓ Despigmenta e ilumina la piel
+                    <br>
+                    ✓ Hidrata y rejuvenece la piel</p>
+            </div>
+            <!-- Columna derecha: imagen -->
+            <img src="{{ url_for('static', filename='imagenes/pinkglow.jpg') }}" alt="Pink Glow">
+        </div>
+
+        <!-- Gráfico de Servicios Más Solicitados -->
+<div class="grafico-servicios">
+    <h2 class="titulo-principal">Servicios Más Solicitados – Últimos 3 Meses</h2>
+    <img src="{{ url_for('static', filename='servicios_mas_solicitados.png') }}" alt="Gráfico de servicios" class="img-grafico">
+</div>
+
+    <!-- Pie de página -->
+    <div id="pie">
+        <p>&copy; 2025 Luisa Pérez Estética Profesional | Todos los derechos reservados</p>
+    </div>
+</body>
+</html>

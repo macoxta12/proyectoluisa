@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paquetes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosluisa.css') }}" type="text/css">
+</head>
+<body>
+    <header id="cabecera">
+        <img class="logo" src="{{ url_for('static', filename='imagenes/logonegro.jpg') }}">
+        <h1>Luisa Pérez</h1>
+        <h4>Cosmetóloga</h4>
+    </header>
+
+    <div id="menu">
+        <a href="/" class="nav-enlace">Inicio</a>
+        <a href="/servicios" class="nav-enlace">Servicios</a>
+        <a href="/paquetes" class="nav-enlace">Paquetes</a>
+        <a href="/agenda" class="nav-enlace">Agenda</a>
+    </div>
+
+    <div class="contenedor-paquetes">
+        <h2 class="titulo-principal">Nuestros Paquetes</h2>
+
+        <!-- Paquete 1 -->
+        <div class="paquete">
+            <div class="contenido-servicio">
+                <h3>Paquete Pink Glow</h3>
+                <h4>5 sesiones</h4>
+                <p>Tratamiento facial y corporal en 5 sesiones que aclara manchas, mejora la luminosidad, firmeza y elasticidad de la piel.
+                    <br>
+                    Nutre, hidrata, controla la formación de nuevas imperfecciones y rejuvenece desde adentro con un potente cóctel de
+                    vitaminas y antioxidantes.</p>
+            </div>
+            <img src="{{ url_for('static', filename='imagenes/paquetepink.jpg') }}" alt="Paquete Pink Glow - 5 sesiones">
+        </div>
+
+        <!-- Paquete 2 -->
+        <div class="paquete">
+            <div class="contenido-servicio">
+                <h3>Paquete de Masajes Reductores</h3>
+                <h4>Mínimo 3 sesiones</h4>
+                <p>Masajes corporales enfocados en reducir grasa localizada, moldear la figura y mejorar la apariencia de la piel.
+                    <br>
+                    Incluyen técnicas manuales intensas, uso de geles lipolíticos y aparatología según evaluación.</p>
+            </div>
+            <img src="{{ url_for('static', filename='imagenes/paquetemasajes.jpg') }}" alt="Paquete de Masajes Reductores">
+        </div>
+
+        <!-- Paquete 3 (abajo centrado) -->
+        <div class="paquete full-width">
+            <div class="contenido-servicio">
+                <h3>Paquete Terapia Capilar</h3>
+                <h4>3 sesiones de PlasmaVit y 6 sesiones de mesoterapia</h4>
+                <p>Tratamiento integral para la alopecia que fortalece el cuero cabelludo y estimula el crecimiento del cabello.
+                    Incluye masaje de alta frecuencia, activación con dermapen y aplicación de mesoterapia con oligoelementos específicos.
+                    <br>•Sesiones de plasma: 1 vez al mes
+                    <br>•Sesiones de mesoterapia: 1 por semana
+                    <br>
+                    <br>
+                    Forma de pago: 50% inicial y dos pagos del 25%.</p>
+            </div>
+            <img src="{{ url_for('static', filename='imagenes/paquetecapilar.jpg') }}" alt="Paquete Terapia Capilar">
+        </div>
+    </div>
+
+<!-- Gráfico de paquetes más solicitados -->
+<section class="grafico-paquetes">
+    <h2>Servicios Más Solicitados – Últimos 3 Meses</h2>
+    <canvas id="graficoPaquetes"></canvas>
+</section>
+
+<!-- Chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    const labels = {{ labels | tojson }};
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Cantidad de solicitudes',
+            data: {{ data | tojson }},
+            backgroundColor: [
+                '#FC9E82', '#F2B5A5', '#732F29'
+            ],
+            hoverOffset: 10,
+            borderColor: '#fff',
+            borderWidth: 2
+        }]
+    };
+
+    const config = {
+        type: 'pie',
+        data: data,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#732F29',
+                        font: {
+                            size: 14,
+                            family: 'Verdana'
+                        }
+                    }
+                },
+                tooltip: {
+                    enabled: true
+                }
+            }
+        }
+    };
+
+    new Chart(document.getElementById('graficoPaquetes'), config);
+</script>
+
+<div id="pie">
+    <p>&copy; 2025 Luisa Pérez Estética Profesional | Todos los derechos reservados</p>
+</div>
+</body>
+</html>

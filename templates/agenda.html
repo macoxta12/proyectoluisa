@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agendar Cita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilosluisa.css') }}">
+</head>
+<body>
+    <header id="cabecera">
+        <img class="logo" src="{{ url_for('static', filename='imagenes/logonegro.jpg') }}">
+        <h1>Luisa Pérez</h1>
+        <h4>Cosmetóloga</h4>
+    </header>
+
+    <div id="menu">
+        <a href="/" class="nav-enlace">Inicio</a>
+        <a href="/servicios" class="nav-enlace">Servicios</a>
+        <a href="/promociones" class="nav-enlace">Promociones</a>
+        <a href="/agenda" class="nav-enlace">Agenda</a>
+    </div>
+
+    <div class="bienvenida">
+        <h2>Formulario de Agendamiento</h2>
+        <form method="POST" action="/agenda">
+            <label>Nombre completo:</label><br>
+            <input type="text" name="nombre" required><br><br>
+
+            <label>Número de teléfono:</label><br>
+            <input type="tel" name="telefono" required><br><br>
+
+            <label>Correo electrónico (opcional):</label><br>
+            <input type="email" name="correo"><br><br>
+
+            <label>Servicio:</label><br>
+            <select name="servicio" required>
+                <option value="Limpieza Facial Profunda">Limpieza Facial Profunda</option>
+                <option value="Pink Glow">Pink Glow</option>
+                <option value="Vitaminas con Dermapen">Vitaminas con Dermapen</option>
+                <option value="Electrocauterización">Electrocauterización</option>
+                <option value="Valoración Cosmetológica">Valoración Cosmetológica</option>
+                <option value="Paquete Pink Glow">Paquete Pink Glow</option>
+                <option value="Paquete de Masajes Reductores">Paquete de Masajes Reductores</option>
+                <option value="Paquete Terapia Capilar">Paquete Terapia Capilar</option>
+            </select><br><br>
+
+            <label>Fecha preferida:</label><br>
+            <input type="date" name="fecha" required><br><br>
+
+            <label for="hora">Hora preferida:</label>
+            <input type="time" id="hora" name="horario" min="09:00" max="17:00" required>
+            <small>Horario disponible: 9:00 a.m. - 5:00 p.m.</small>
+            </select><br><br>
+
+            <label>¿Es tu primera visita?</label><br>
+            <input type="radio" name="primera_vez" value="Sí" required> Sí
+            <input type="radio" name="primera_vez" value="No" required> No<br><br>
+
+            <label>Comentarios o condiciones de la piel (opcional):</label><br>
+            <textarea name="comentarios" rows="4" cols="50"></textarea><br><br>
+
+            <button type="submit">Agendar Cita</button>
+        </form>
+    </div>
+</body>
+</html>
